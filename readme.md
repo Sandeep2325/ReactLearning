@@ -1,1 +1,1 @@
-#This repo consists Normal react app and also bundler(Vite) react app.
+#This repo consists of my react learnings and my revisions
