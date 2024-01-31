@@ -11,7 +11,6 @@ function Login() {
   const [product3, setProduct3] = useState("");
 
   const { setUser, setPassword } = useContext(UserContext);
-
   const { setProducts } = useContext(ProductContext);
   const handlesubmit = (e) => {
     e.preventDefault();
