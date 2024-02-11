@@ -1,8 +1,10 @@
 import React from "react";
+import Container from "../container/Container";
 import { Link } from "react-router-dom";
-function footer() {
+function Footer() {
   return (
     <footer className="bg-dark text-light py-4">
+      <Container>
       <div className="container">
         <div className="row">
           <div className="col-md-6">
@@ -25,8 +27,9 @@ function footer() {
           </div>
         </div>
       </div>
+      </Container>
     </footer>
   );
 }
 
-export default footer;
+export default Footer;

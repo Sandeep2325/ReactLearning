@@ -14,6 +14,7 @@ export class AuthService {
         try {
             const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount) {
+                console.log(email,password)
                 return this.login(email, password)
             } else {
                 return userAccount
@@ -32,7 +33,7 @@ export class AuthService {
 
     async getCurrentUser() {
         try {
-            return await this.account.get()
+            return await this.account.get();
         } catch (error) {
             console.log("Appwrite is throwing this error in getCurrentUser: ", error)
         }

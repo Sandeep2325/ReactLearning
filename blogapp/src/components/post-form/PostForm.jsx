@@ -5,7 +5,7 @@ import Input from "../Input";
 import RTE from "../RTE";
 import Select from "../Select";
 import appwriteService from "../../appwrite/config";
-import { UseSelector, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function PostForm({ post }) {
@@ -28,7 +28,7 @@ export default function PostForm({ post }) {
   const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
-    console.log(data)
+    console.log(data);
     if (post) {
       const file = data.image[0]
         ? await appwriteService.uploadFile(data.image[0])
@@ -57,6 +57,19 @@ export default function PostForm({ post }) {
         }
       }
     } else {
+      const file = await appwriteService.uploadFile(data.image[0]);
+      if (file) {
+        const fileId = file.$id;
+        data.featuredImage = fileId;
+        const dbPost = await appwriteService.createPost({
+          ...data,
+          userId: userData.$id,
+        });
+
+        if (dbPost) {
+          navigate(`/post/${dbPost.$id}`);
+        }
+      }
     }
   };
   const slugTranform = useCallback((value) => {
@@ -111,7 +124,7 @@ export default function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg"
-          {...required("image", { required: !post })}
+          {...register("image", { required: !post })}
         />
         {post && (
           <div className="w-100 mb-4">

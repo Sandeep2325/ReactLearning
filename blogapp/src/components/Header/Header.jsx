@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "../container/Container";
-import { Logo } from "../Logo";
+import Container from "../container/Container";
+import Logo from "../Logo";
 import { Link, useNavigate } from "react-router-dom";
-import { Logout } from "./Logout";
+import Logout from "./Logout";
 import { useSelector } from "react-redux";
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
@@ -39,12 +39,14 @@ function Header() {
       <Container>
         <nav className="d-flex">
           <div className="me-4">
-            <Link to="/"></Link>
+            <Link to="/">
+              <Logo width="100%" />
+            </Link>
           </div>
-          <ul className="d-flex ms-auto">
+          <ul className="d-flex ms-auto mt-3" style={{"list-style-type": "none"}}>
             {navItems.map((item) =>
               item.active ? (
-                <li key={item.name}>
+                <li className="px-2" key={item.name} >
                   <button
                     className="btn btn-outline-primary d-inline-block px-3 py-1 rounded-pill"
                     style={{ transition: "background-color 0.2s" }}

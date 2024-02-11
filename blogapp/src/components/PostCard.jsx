@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import appwriteService from "../appwrite/config.js";
 function PostCard({ $id, title, featuredImage }) {
+  console.log(featuredImage);
   return (
     <Link to={`/post/${$id}`}>
       <div className="w-100 bg-gray rounded-xl p-4">

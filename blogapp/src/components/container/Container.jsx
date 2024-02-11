@@ -2,7 +2,7 @@ import React from 'react'
 
 function Container({children}) {
   return (
-    <div className='px-4 container-fluid w-auto'>
+    <div className='px-4 container-fluid '>
 {children}
     </div>
   )
