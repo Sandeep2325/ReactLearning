@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Logout from "./Logout";
 import { useSelector } from "react-redux";
 function Header() {
+  
   const authStatus = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
   const navItems = [
@@ -35,7 +36,7 @@ function Header() {
     },
   ];
   return (
-    <header className="py-3 shadow bg-secondary">
+    <header className="py-3 shadow custom-header">
       <Container>
         <nav className="d-flex">
           <div className="me-4">
@@ -49,7 +50,7 @@ function Header() {
                 <li className="px-2" key={item.name} >
                   <button
                     className="btn btn-outline-primary d-inline-block px-3 py-1 rounded-pill"
-                    style={{ transition: "background-color 0.2s" }}
+                    style={{ transition: "background-color 0.2s", "background-color": "darkturquoise" }}
                     onClick={() => navigate(item.slug)}
                   >
                     {item.name}

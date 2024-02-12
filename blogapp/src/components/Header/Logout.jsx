@@ -12,7 +12,8 @@ function Logout() {
   };
   return (
     <button
-      className="btn btn-primary rounded-0 px-6 py-2 d-inline-block"
+    style={{ transition: "background-color 0.2s", "background-color": "darkturquoise" }}
+      className="btn btn-outline-primary d-inline-block px-3 py-1 rounded-pill px-6 py-2 d-inline-block"
       onClick={logoutHandler}
     >
       Logout

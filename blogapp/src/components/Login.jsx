@@ -31,7 +31,7 @@ function Login() {
     }
   };
   return (
-    <div className="d-flex align-items-center justify-content-center">
+    <div className="d-flex align-items-center justify-content-center authdiv">
         <div className="mx-auto w-100 max-w-lg bg-light rounded-3 p-5 border border-dark border-2">
             <div className="mb-2 d-flex justify-content-center">
                 <span className="d-inline-block w-100 max-w-100">
@@ -52,7 +52,8 @@ function Login() {
 
             </p>
             {error && <p className="text-red text-center">{error}</p>}
-            <form onSubmit={handleSubmit(LoginUser)} className="mt-8">
+            <form onSubmit={handleSubmit(LoginUser)} className="mt-8 d-flex justify-content-center ">
+            <div className="px-3 py-3">
                 <Input
                 {...register("email", { required: true })}
                     label="Email: "
@@ -72,9 +73,10 @@ function Login() {
                 <Button
                     type="submit"
                     bgColor="bg-green"
-                    className="w-100"
+                    className="w-100 btn btn-primary authbtn"
                 >Login{""}
                 </Button>
+                </div>
             </form>
 
         </div>

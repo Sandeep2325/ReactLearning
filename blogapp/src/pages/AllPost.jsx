@@ -20,6 +20,7 @@ function AllPost() {
     <div className="w-100 py-8">
       <Container>
         <div className="d-flex flex-wrap">
+        
           {posts.map((post) => (
             <div className="p-2 w-25">
               <PostCard
@@ -30,6 +31,7 @@ function AllPost() {
               />
             </div>
           ))}
+          
         </div>
       </Container>
     </div>

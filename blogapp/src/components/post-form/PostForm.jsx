@@ -89,12 +89,13 @@ export default function PostForm({ post }) {
     });
   }, [watch, slugTranform, setValue]);
   return (
-    <form onSubmit={handleSubmit(submit)} className="d-flex flex-wrap">
-      <div className="" style={{ width: "66.666%", paddingX: "0.5rem" }}>
+    <form onSubmit={handleSubmit(submit)} className="row authdiv">
+      <div className="col-7" style={{ width: "66.666%", paddingX: "0.5rem" }}>
         <Input
-          label="Title"
+          label="Title :"
           placeholder="Title"
           className="mb-4"
+  
           {...register("title", { required: true })}
         />
         <Input
@@ -116,11 +117,11 @@ export default function PostForm({ post }) {
         />
       </div>
       <div
-        className=""
+        className="col-5"
         style={{ width: "calc(33.333% - 0.5rem)", paddingX: "0.25rem" }}
       >
         <Input
-          label="Featured Image"
+          label="Featured Image :"
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg"
@@ -137,15 +138,15 @@ export default function PostForm({ post }) {
         )}
         <Select
           options={["active", "inactive"]}
-          label="Status"
+          label="Status :"
           className="mb-4"
           {...register("status", { required: true })}
         />
         <Button
           type="submit"
           bgColor={post ? "bg-green" : undefined}
-          className="w-100"
-        />
+          className="w-100 authbtn"
+        >Submit</Button>
       </div>
     </form>
   );

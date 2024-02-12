@@ -1,14 +1,14 @@
 import React, { useId } from "react";
 
 const Input = React.forwardRef(function Input(
-  { label, type = "text", className = "", ...props },
+  { label, type = "text", content="No content", className = "", ...props },
   ref
 ) {
   const id = useId();
   return (
     <div className="w-100">
       {label && (
-        <label htmlFor={id} className="mb-1 d-inline-block ps-1">
+        <label htmlFor={id} className="mb-1 d-inline-block ps-1 px-3">
           {label}
         </label>
       )}

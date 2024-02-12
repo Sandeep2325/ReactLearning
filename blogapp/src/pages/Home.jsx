@@ -15,25 +15,26 @@ function Home() {
       }
     });
   }, []);
-  if(posts.length===0){
+  if (posts.length === 0) {
     return (
       <div className="w-100 py-8">
-      <Container>
-        <div className="d-flex flex-wrap">
-          <h1>Login to read posts or No posts to view</h1>
-        </div>
-      </Container>
-    </div>
-    )
+        <Container>
+          <div className="d-flex flex-wrap">
+            <h1>Login to read posts or No posts to view</h1>
+          </div>
+        </Container>
+      </div>
+    );
   }
   return (
-    <div className="w-100 py-8">
+    <div className="w-100 py-8 pt-3">
       <Container>
         <div className="d-flex flex-wrap">
+          
           {posts.map((post) => (
             <div className="p-2 w-25">
               <PostCard
-              {...post}
+                {...post}
                 // id={post.$id}
                 // title={post.title}
                 // featuredImage={post.featuredImage}
@@ -43,7 +44,7 @@ function Home() {
         </div>
       </Container>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
